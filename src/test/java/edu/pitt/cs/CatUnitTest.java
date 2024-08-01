@@ -31,7 +31,8 @@ public class CatUnitTest {
 		// Passing InstanceType.IMPL as the first parameter will create a real cat using your CatImpl implementation.
 		// Passing InstanceType.MOCK as the first parameter will create a mock cat using Mockito.
 		// Which type is the correct choice for this unit test?  I'll leave it up to you.  The answer is in the Unit Testing Part 2 lecture. :)
-		// TODO: Fill in
+		// TOD: Fill in
+		c = Cat.createInstance(InstanceType.IMPL, 1, "Jennyanydots");
 	}
 
 	@After
@@ -52,7 +53,9 @@ public class CatUnitTest {
 	 */
 	@Test
 	public void testGetId() {
-		// TODO: Fill in
+		// TOD: Fill in
+		int id = c.getId();
+		assertEquals(1, id);
 	}
 
 	/**
@@ -66,7 +69,9 @@ public class CatUnitTest {
 	 */
 	@Test
 	public void testGetName() {
-		// TODO: Fill in
+		// TOD: Fill in
+		String name = c.getName();
+		assertEquals("Jennyanydots", name);
 	}
 
 	/**
@@ -80,7 +85,9 @@ public class CatUnitTest {
 	 */
 	@Test
 	public void testGetRented() {
-		// TODO: Fill in
+		// TOD: Fill in
+		boolean getrented = c.getRented();
+		assertFalse(getrented);
 	}
 
 	/**
@@ -94,7 +101,9 @@ public class CatUnitTest {
 	 */
 	@Test
 	public void testToString() {
-		// TODO: Fill in
+		// TOD: Fill in
+		String tostring = c.toString();
+		assertEquals("ID 1. Jennyanydots", tostring);
 	}
 
 	/**
@@ -109,7 +118,10 @@ public class CatUnitTest {
 	 */
 	@Test
 	public void testRentCat() {
-		// TODO: Fill in
+		// TOD: Fill in
+		c.rentCat();
+		boolean rented = c.getRented();
+		assertTrue(rented);
 	}
 
 	/**
@@ -125,7 +137,10 @@ public class CatUnitTest {
 	 */
 	@Test
 	public void testReturnCat() {
-		// TODO: Fill in
+		// TOD: Fill in
+		c.returnCat();
+		boolean getreturn = c.getRented();
+		assertFalse(getreturn);
 	}
 
 	/**
@@ -140,7 +155,10 @@ public class CatUnitTest {
 	 */
 	@Test
 	public void testRenameCat() {
-		// TODO: Fill in
+		// TOD: Fill in
+		c.renameCat("Garfield");
+		String renamegar = c.toString();
+		assertEquals("ID 1. Garfield", renamegar);
 	}
 
 }
